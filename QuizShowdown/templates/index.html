@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <video class="video-bg" autoplay loop muted>
+        <source src="{{ url_for('static', filename='background.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <div class="quiz-container">
+        <h1>Welcome to Quiz Showdown!</h1>
+        <p><strong>Rules:</strong></p>
+        <ul style="text-align: left;">
+            <li>You will be asked 5 random questions.</li>
+            <li>You must answer at least 4 correctly to pass.</li>
+            <li>Each wrong answer reduces 10 seconds from your bomb timer.</li>
+            <li>If you fail, you can retry by attempting 4 penalty questions.</li>
+            <li>If you succeed answering all questions bonus of 50 seconds will be rewarded in the bomb timer.</li>
+        </ul>
+
+        <a href="{{ url_for('start_quiz', type='Technical') }}" class="neon-button">Technical Questions</a>
+        <a href="{{ url_for('start_quiz', type='Logical') }}" class="neon-button">Logical Questions</a>
+    </div>
+</body>
+</html>

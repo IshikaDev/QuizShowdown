@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Quiz Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <video class="video-bg" autoplay loop muted>
+        <source src="{{ url_for('static', filename='background.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="result-container">
+        <h1>Result</h1>
+        <p>Your Final Score: {{ score }}/5</p>
+        <p>Total Penalty Time: {{ penalty_time }} seconds</p>
+        
+        {% if message == "Thank You" %}
+            <p class="success">{{ message }}</p>
+        {% else %}
+            <p class="warning">{{ message }}</p>
+        {% endif %}
+        
+        <a href="/password" class="neon-button">Restart Quiz</a> 
+    </div>
+</body>
+</html>
